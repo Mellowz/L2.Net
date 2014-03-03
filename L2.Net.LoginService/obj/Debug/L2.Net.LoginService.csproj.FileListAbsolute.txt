@@ -1,0 +1,9 @@
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.pdb
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\bin\Debug\L2.Net.pdb
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.XML
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\bin\Debug\L2.Net.dll
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\bin\Debug\L2.Net.xml
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\obj\Debug\L2.Net.LoginService.csprojResolveAssemblyReference.cache
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\obj\Debug\L2.Net.LoginService.exe
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\obj\Debug\L2.Net.LoginService.pdb
+E:\l2\New folder\L2.Net Project\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.exe

@@ -1,0 +1,10 @@
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.GameService.pdb
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.GameService.exe.config
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.GameService.XML
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.GameService.exe
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.dll
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.pdb
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\bin\Debug\L2.Net.xml
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\obj\Debug\L2.Net.GameService.csprojResolveAssemblyReference.cache
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\obj\Debug\L2.Net.GameService.exe
+E:\l2\New folder\L2.Net Project\L2.Net.GameService\obj\Debug\L2.Net.GameService.pdb

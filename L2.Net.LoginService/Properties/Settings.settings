@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="L2.Net.LoginService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceUniqueID" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">201</Value>
+    </Setting>
+    <Setting Name="CacheServiceAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="CacheServicePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3001</Value>
+    </Setting>
+    <Setting Name="CacheServiceReconnectInterval" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="CacheServiceAutoReconnect" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LoginServiceAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="LoginServicePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2106</Value>
+    </Setting>
+    <Setting Name="LoginServiceBacklog" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="LoginServiceEnableFirewall" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LoginServiceAutoCreateUsers" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LoginServiceDefaultAccessLevel" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="LoginServiceAllowedAccessLevel" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LoginServicePasswordsProtectionLevel" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="LoginServiceUserLoginRegex" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[A-Za-z0-9]</Value>
+    </Setting>
+    <Setting Name="LoginServiceMaxAwaitingUsersCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

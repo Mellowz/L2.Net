@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A51D5791-5BA0-461B-8601-65394A75705B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L2.Net</RootNamespace>
+    <AssemblyName>L2.Net</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\L2.Net.XML</DocumentationFile>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Geometry\IMapUnit.cs" />
+    <Compile Include="INamed.cs" />
+    <Compile Include="Geometry\IPoint3D.cs" />
+    <Compile Include="Geometry\IPosition.cs" />
+    <Compile Include="IUniqueIdentified.cs" />
+    <Compile Include="Geometry\Point3D.cs" />
+    <Compile Include="Geometry\Position.cs" />
+    <Compile Include="Geometry\Utility.cs" />
+    <Compile Include="Geometry\Zones\Interfaces.cs" />
+    <Compile Include="Geometry\Zones\Plane.cs" />
+    <Compile Include="Geometry\Zones\Cylinder.cs" />
+    <Compile Include="Geometry\Zones\Polyhedron.cs" />
+    <Compile Include="Geometry\Zones\Sphere.cs" />
+    <Compile Include="Geometry\Zones\Tetrahedron.cs" />
+    <Compile Include="Geometry\Zones\Vertex.cs" />
+    <Compile Include="Geometry\Zones\Zone.cs" />
+    <Compile Include="Mobiles\Base\IMobile.cs" />
+    <Compile Include="Mobiles\Base\Mobile.cs" />
+    <Compile Include="Mobiles\Base\MovingState.cs" />
+    <Compile Include="Mobiles\Character\Actor.cs" />
+    <Compile Include="Mobiles\Character\Appearance.cs" />
+    <Compile Include="Mobiles\Character\WaitingState.cs" />
+    <Compile Include="Mobiles\Citizens\Citizen.cs" />
+    <Compile Include="Mobiles\Controlled\ControlledMobile.cs" />
+    <Compile Include="Mobiles\Controlled\IControlled.cs" />
+    <Compile Include="Mobiles\Controlled\IMaster.cs" />
+    <Compile Include="Mobiles\Controlled\IMasterOrControlled.cs" />
+    <Compile Include="Mobiles\Monsters\Monster.cs" />
+    <Compile Include="Mobiles\Npc\DefaultNpc.cs" />
+    <Compile Include="Network\NetworkHelper.cs" />
+    <Compile Include="Network\Packet.cs" />
+    <Compile Include="Network\Firewall.cs" />
+    <Compile Include="Network\InnerNetworkClient.cs" />
+    <Compile Include="Network\InnerNetworkConnection.cs" />
+    <Compile Include="Network\Listener.cs" />
+    <Compile Include="Network\NetworkClient.cs" />
+    <Compile Include="Network\RemoteServiceSettings.cs" />
+    <Compile Include="Network\ServiceShutdownEventArgs.cs" />
+    <Compile Include="Skills\Effects\AbstractEffect.cs" />
+    <Compile Include="Structs\Services\NetLayer.cs" />
+    <Compile Include="Structs\Services\ServiceLayer\InitializeRequest.cs" />
+    <Compile Include="Structs\Services\ServiceLayer\InitializeResponse.cs" />
+    <Compile Include="Structs\Services\ServiceLayer\SetSettingsRequest.cs" />
+    <Compile Include="Structs\Services\ServiceLayer\SetSettingsResponse.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\CacheUserSessionRequest.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\CacheUserSessionResponse.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\JoinWorldRequest.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\JoinWorldResponse.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\UnCacheUser.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\UserAuthenticationRequest.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\UserAuthenticationResponse.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\WorldsListRequest.cs" />
+    <Compile Include="Structs\Services\UserDataLayer\WorldsListResponse.cs" />
+    <Compile Include="Structs\Services\WorldDataLayer\SetWorldActiveRequest.cs" />
+    <Compile Include="Structs\Services\WorldDataLayer\SetWorldActiveResponse.cs" />
+    <Compile Include="Structs\Services\WorldSummary.cs" />
+    <Compile Include="Structs\Client\KeyPacket.cs" />
+    <Compile Include="Structs\UserSession.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripting\ICompilable.cs" />
+    <Compile Include="Scripting\SmartCompiler.cs" />
+    <Compile Include="Utility\L2Buffer.cs" />
+    <Compile Include="Utility\L2FileReader.cs" />
+    <Compile Include="Utility\L2Random.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\ServiceTime.cs" />
+    <Compile Include="Utility\Stopwatch.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

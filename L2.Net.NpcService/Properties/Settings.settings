@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="L2.Net.NpcService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceUniqueID" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">101</Value>
+    </Setting>
+    <Setting Name="CacheServiceAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="CacheServicePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3001</Value>
+    </Setting>
+    <Setting Name="CacheServiceReconnectInterval" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:05</Value>
+    </Setting>
+    <Setting Name="GameServiceAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="GameServicePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3002</Value>
+    </Setting>
+    <Setting Name="GameServiceReconnectInterval" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:05</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

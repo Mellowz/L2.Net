@@ -1,0 +1,79 @@
+﻿<project schemaVersion="1.6.0.2">
+    <assemblies>
+        <assembly assemblyPath="..\L2.Net.CacheService\bin\Debug\L2.Net.CacheService.exe" xmlCommentsPath="..\L2.Net.CacheService\bin\Debug\L2.Net.CacheService.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\L2.Net.DataProvider\bin\Debug\L2.Net.DataProvider.dll" xmlCommentsPath="..\L2.Net.DataProvider\bin\Debug\L2.Net.DataProvider.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\L2.Net\bin\Debug\L2.Net.dll" xmlCommentsPath="..\L2.Net\bin\Debug\L2.Net.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\L2.Net.GameService\bin\Debug\L2.Net.GameService.exe" xmlCommentsPath="..\L2.Net.GameService\bin\Debug\L2.Net.GameService.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.exe" xmlCommentsPath="..\L2.Net.LoginService\bin\Debug\L2.Net.LoginService.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\L2.Net.Mobiles\bin\Debug\L2.Net.Mobiles.dll" xmlCommentsPath="..\L2.Net.Mobiles\bin\Debug\L2.Net.Mobiles.XML" commentsOnly="False" />
+        <assembly assemblyPath="..\L2.Net.NpcService\bin\Debug\L2.Net.NpcService.exe" xmlCommentsPath="..\L2.Net.NpcService\bin\Debug\L2.Net.NpcService.XML" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\Debug\L2.Net.Scripting.dll" xmlCommentsPath=".\bin\Debug\L2.Net.Scripting.XML" commentsOnly="False" />
+    </assemblies>
+    <namespaceSummaries>
+        <namespaceSummaryItem name="" isDocumented="False" />
+        <namespaceSummaryItem name="L2.Net" isDocumented="True">Global L2.Net Project namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.CacheService" isDocumented="True">Root Cache service namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.CacheService.Network" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.CacheService.Network.Handlers" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.CacheService.Properties" isDocumented="True">Cache Service settings namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.CacheService.Realtime" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.DataProvider" isDocumented="True">Root Data Provider Library namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.GameService" isDocumented="True">Root Game Service namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.GameService.Core" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.GameService.InnerNetwork" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.GameService.OuterNetwork" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.GameService.Properties" isDocumented="True">Game Service settings namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.GameService.WorldPlane" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.LoginService" isDocumented="True">Root Login Service namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.LoginService.Crypt" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.LoginService.InnerNetwork" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.LoginService.OuterNetwork" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.LoginService.Properties" isDocumented="True">Login Service settings namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.Mobiles" isDocumented="True">Root Mobiles Library namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.Mobiles.Monsters" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.Network" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.Network.Services" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.Network.Structs" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.NpcService" isDocumented="True">Root Npc Service namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.NpcService.Network" isDocumented="True" />
+        <namespaceSummaryItem name="L2.Net.NpcService.Properties" isDocumented="True">Npc Service settings namespace.</namespaceSummaryItem>
+        <namespaceSummaryItem name="L2.Net.Scripting" isDocumented="True" />
+    </namespaceSummaries>
+    <ProjectSummary />
+    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors</MissingTags>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Internals, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath path="" />
+    <HtmlHelp2xCompilerPath path="" />
+    <OutputPath>.\</OutputPath>
+    <SandcastlePath path="" />
+    <WorkingPath path="" />
+    <CleanIntermediates>True</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <PurgeDuplicateTopics>True</PurgeDuplicateTopics>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <FrameworkVersion>3.5</FrameworkVersion>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <Preliminary>False</Preliminary>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle>L2.Net</RootNamespaceTitle>
+    <HelpTitle>L2.Net Classes Documentation Library</HelpTitle>
+    <HtmlHelpName>L2.Net.Documentation</HtmlHelpName>
+    <Language>en-US</Language>
+    <CopyrightHref>http://www.codeplex.com/L2Net</CopyrightHref>
+    <CopyrightText>Copyright © L2.Net Team 2008</CopyrightText>
+    <FeedbackEMailAddress />
+    <HeaderText />
+    <FooterText />
+    <ProjectLinkType>Local</ProjectLinkType>
+    <SdkLinkType>Msdn</SdkLinkType>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <PresentationStyle>vs2005</PresentationStyle>
+    <NamingMethod>Guid</NamingMethod>
+    <SyntaxFilters>CSharp</SyntaxFilters>
+    <ShowFeedbackControl>False</ShowFeedbackControl>
+    <ContentPlacement>BelowNamespaces</ContentPlacement>
+    <ContentSiteMap path="" />
+    <TopicFileTransform path="" />
+</project>

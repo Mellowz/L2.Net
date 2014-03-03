@@ -1,0 +1,5 @@
+﻿#
+# List of assemblies, that nned to be referenced for CS and VB scripts compilation.
+#
+System.dll
+L2.Net.dll

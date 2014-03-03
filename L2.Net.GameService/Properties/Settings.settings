@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="L2.Net.GameService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServiceUniqueID" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CacheServiceAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="CacheServicePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3001</Value>
+    </Setting>
+    <Setting Name="CacheServiceReconnectInterval" Type="System.TimeSpan" Scope="User">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="CacheServiceAutoReconnect" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GameServiceAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="GameServicePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3002</Value>
+    </Setting>
+    <Setting Name="GameServiceEnableFirewall" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="WorldAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="WorldPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7777</Value>
+    </Setting>
+    <Setting Name="WorldAllowedAccessLevel" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="GeodataFilesPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Geodata</Value>
+    </Setting>
+    <Setting Name="WorldMinProtoRev" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">527</Value>
+    </Setting>
+    <Setting Name="WorldMaxProtoRev" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">531</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
