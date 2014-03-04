@@ -1,9 +1,0 @@
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\bin\Debug\L2.Net.DataProvider.XML
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\bin\Debug\L2.Net.DataProvider.dll
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\bin\Debug\L2.Net.DataProvider.pdb
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\bin\Debug\L2.Net.dll
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\bin\Debug\L2.Net.pdb
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\bin\Debug\L2.Net.xml
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\obj\Debug\L2.Net.DataProvider.csprojResolveAssemblyReference.cache
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\obj\Debug\L2.Net.DataProvider.dll
-E:\l2\New folder\L2.Net Project\L2.Net.DataProvider\obj\Debug\L2.Net.DataProvider.pdb

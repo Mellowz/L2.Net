@@ -4,6 +4,7 @@ using L2.Net.GameService.Properties;
 using L2.Net.Network;
 using L2.Net.Structs.Client;
 using System.Text;
+using L2.Net.GameService.OuterNetwork.ClientPackets;
 
 namespace L2.Net.GameService.OuterNetwork
 {
@@ -74,7 +75,7 @@ namespace L2.Net.GameService.OuterNetwork
         /// </summary>
         public override void BeginReceive()
         {
-            m_Socket.BeginReceive(m_ReceiveBuffer, 0, 2, 0, m_ReceiveCallback, null);
+            m_Socket.BeginReceive(m_ReceiveBuffer, 0, 0, 0, m_ReceiveCallback, null);
         }
 
         /// <summary>
@@ -117,7 +118,8 @@ namespace L2.Net.GameService.OuterNetwork
                                     byte[] keyIN = BlowFishKeygen.GetNext();
                                     //byte[] keyOUT = BlowFishKeygen.GetNext();
 
-                                    m_Crypt = new GameCrypt(keyIN, keyIN);
+                                    m_Crypt = new GameCrypt();
+                                    m_Crypt.setKey(keyIN);
 
                                     SendNoCrypt(KeyPacket.Create(keyIN));
 
@@ -127,7 +129,7 @@ namespace L2.Net.GameService.OuterNetwork
                                 }
                             case 0x2b: // login
                                 {
-
+                                    new AuthLogin(packet).RunImpl();
                                     break;
                                 }
                             default:
@@ -175,6 +177,8 @@ namespace L2.Net.GameService.OuterNetwork
 
                 fixed ( byte* buf = m_ReceiveBuffer )
                 {
+                    //Logger.WriteLine(Source.Debug, "Recieve :\r\n{0}", L2Buffer.ToString(m_ReceiveBuffer));
+
                     if ( !m_HeaderReceived ) //get packet capacity
                     {
                         L2Buffer.Extend(ref m_ReceiveBuffer, 0, *( ( short* )( buf ) ) - sizeof(short));
@@ -211,7 +215,7 @@ namespace L2.Net.GameService.OuterNetwork
         {
             p.Prepare(sizeof(short));
             byte[] buffer = p.GetBuffer();
-            m_Crypt.Encrypt(ref buffer);
+            m_Crypt.Encrypt(ref buffer, 0, buffer.Length);
             SendData(buffer);
         }
 
@@ -233,11 +237,10 @@ namespace L2.Net.GameService.OuterNetwork
             try
             {
                 m_ReceivedLength += m_Socket.EndReceive(ar);
-                Logger.WriteLine(Source.Debug, "m_ReceivedLength == {0}", m_ReceivedLength);
+                //Logger.WriteLine(Source.Debug, "m_ReceivedLength == {0}", m_ReceivedLength);
 
                 if ( m_ReceivedLength == 0 )
                 {
-                    Logger.WriteLine(Source.Debug, "m_ReceivedLength == 0");
                     BeginReceive();
                     return;
                 }
@@ -247,8 +250,6 @@ namespace L2.Net.GameService.OuterNetwork
                     
                     if ( !m_HeaderReceived ) //get packet capacity
                     {
-                        Logger.WriteLine(Source.Debug, "m_ReceiveBuffer:\r\n{0}", L2Buffer.ToString(m_ReceiveBuffer));
-
                         L2Buffer.Extend(ref m_ReceiveBuffer, 0, *( ( short* )( buf ) ) - sizeof(short));
                         m_ReceivedLength = 0;
                         m_HeaderReceived = true;
@@ -256,13 +257,13 @@ namespace L2.Net.GameService.OuterNetwork
 
                     if ( m_ReceivedLength == m_ReceiveBuffer.Length ) // all data received
                     {
-                        m_Crypt.Decrypt(ref m_ReceiveBuffer);
+                        m_Crypt.Decrypt(ref m_ReceiveBuffer, 0, m_ReceiveBuffer.Length);
                         Handle(new Packet(1, m_ReceiveBuffer));
                         m_ReceivedLength = 0;
                         m_ReceiveBuffer = m_DefaultBuffer;
                         m_HeaderReceived = false;
 
-                        m_Socket.BeginReceive(m_ReceiveBuffer, 0, 2, 0, ReceiveCallback, null);
+                        m_Socket.BeginReceive(m_ReceiveBuffer, 0, 0, 0, ReceiveCallback, null);
                     }
                     else if ( m_ReceivedLength < m_ReceiveBuffer.Length ) // not all data received
                         m_Socket.BeginReceive(m_ReceiveBuffer, m_ReceivedLength, m_ReceiveBuffer.Length - m_ReceivedLength, 0, m_ReceiveCallback, null);
@@ -304,7 +305,7 @@ namespace L2.Net.GameService.OuterNetwork
         /// <summary>
         /// Game crypt object class.
         /// </summary>
-        private struct GameCrypt
+        /*private struct GameCrypt
         {
             /// <summary>
             /// Input crypt key.
@@ -375,7 +376,7 @@ namespace L2.Net.GameService.OuterNetwork
                     raw[offset + i] = ( byte )temp;
 
                 */
-            }
+            /*}
 
             // one more method
 
@@ -394,6 +395,132 @@ namespace L2.Net.GameService.OuterNetwork
             //        *( int* )( key + 8 ) += *( int* )&length;
             //    }
             //}
+        }*/
+
+        public class GameCrypt
+        {
+            /// <summary>
+            /// Input crypt key.
+            /// </summary>
+            private byte[] m_InputKey = new byte[16];
+
+            /// <summary>
+            /// Output crypt key.
+            /// </summary>
+            private byte[] m_OutputKey = new byte[16];
+
+            private static bool _isEnabled = false;
+
+            private static byte[] RC4_KEY = new byte[32];
+
+            static GameCrypt()
+	        {
+		        RC4_KEY[0] = (byte) 0x48;
+		        RC4_KEY[1] = (byte) 0x18;
+		        RC4_KEY[2] = (byte) 0x9F;
+		        RC4_KEY[3] = (byte) 0x10;
+		        RC4_KEY[4] = (byte) 0x9E;
+		        RC4_KEY[5] = (byte) 0xB2;
+		        RC4_KEY[6] = (byte) 0xD4;
+		        RC4_KEY[7] = (byte) 0xAF;
+		        RC4_KEY[8] = (byte) 0x08;
+		        RC4_KEY[9] = (byte) 0x87;
+		        RC4_KEY[10] = (byte) 0xD9;
+		        RC4_KEY[11] = (byte) 0x70;
+		        RC4_KEY[12] = (byte) 0xCF;
+		        RC4_KEY[13] = (byte) 0xA2;
+		        RC4_KEY[14] = (byte) 0xFC;
+		        RC4_KEY[15] = (byte) 0xC2;
+		        RC4_KEY[16] = (byte) 0x58;
+		        RC4_KEY[17] = (byte) 0x86;
+		        RC4_KEY[18] = (byte) 0xFB;
+		        RC4_KEY[19] = (byte) 0xE8;
+		        RC4_KEY[20] = (byte) 0x97;
+		        RC4_KEY[21] = (byte) 0x48;
+		        RC4_KEY[22] = (byte) 0xEB;
+		        RC4_KEY[23] = (byte) 0x5D;
+		        RC4_KEY[24] = (byte) 0xC7;
+		        RC4_KEY[25] = (byte) 0x8E;
+		        RC4_KEY[26] = (byte) 0x9D;
+		        RC4_KEY[27] = (byte) 0xA0;
+		        RC4_KEY[28] = (byte) 0xB8;
+		        RC4_KEY[29] = (byte) 0xAB;
+		        RC4_KEY[30] = (byte) 0x14;
+		        RC4_KEY[31] = (byte) 0x70;
+	        }
+
+            private RC4 rc4In = new RC4(RC4_KEY);
+	        private RC4 rc4Out = new RC4(RC4_KEY);
+
+	        public void setKey(byte[] key)
+	        {
+		        Array.Copy(key, 0, m_InputKey, 0, 16);
+                Array.Copy(key, 0, m_OutputKey, 0, 16);
+                _isEnabled = true;
+	        }
+
+	        public void setKey(byte[] key, bool value)
+	        {
+		        setKey(key);
+	        }
+
+	        public bool Decrypt(ref byte[] raw, int offset, int size)
+	        {
+		        if(!_isEnabled)
+		        {
+			        return true;
+		        }
+
+		        int temp = 0;
+		        for(int i = 0; i < size; i++)
+		        {
+			        int temp2 = raw[offset + i] & 0xFF;
+			        raw[offset + i] = (byte) (temp2 ^ m_InputKey[i & 15] ^ temp);
+			        temp = temp2;
+		        }
+
+		        long old = m_InputKey[8] & 0xff;
+		        old |= m_InputKey[9] << 8 & 0xff00;
+		        old |= m_InputKey[10] << 0x10 & 0xff0000;
+		        old |= m_InputKey[11] << 0x18 & 0xff000000;
+
+		        old += size;
+
+		        m_InputKey[8] = (byte) (old & 0xff);
+		        m_InputKey[9] = (byte) (old >> 0x08 & 0xff);
+		        m_InputKey[10] = (byte) (old >> 0x10 & 0xff);
+		        m_InputKey[11] = (byte) (old >> 0x18 & 0xff);
+		        return true;
+	        }
+
+	        public void Encrypt(ref byte[] raw, int offset, int size)
+	        {
+		        if(!_isEnabled)
+		        {
+			        _isEnabled = true;
+			        return;
+		        }
+
+		        int temp = 0;
+		        for(int i = 0; i < size; i++)
+		        {
+			        int temp2 = raw[offset + i] & 0xFF;
+                    temp = temp2 ^ m_OutputKey[i & 15] ^ temp;
+			        raw[offset + i] = (byte) temp;
+		        }
+
+                long old = m_OutputKey[8] & 0xff;
+                old |= m_OutputKey[9] << 8 & 0xff00;
+                old |= m_OutputKey[10] << 0x10 & 0xff0000;
+                old |= m_OutputKey[11] << 0x18 & 0xff000000;
+
+		        old += size;
+
+                m_OutputKey[8] = (byte)(old & 0xff);
+                m_OutputKey[9] = (byte)(old >> 0x08 & 0xff);
+                m_OutputKey[10] = (byte)(old >> 0x10 & 0xff);
+                m_OutputKey[11] = (byte)(old >> 0x18 & 0xff);
+	        }
         }
 
         public class RC4

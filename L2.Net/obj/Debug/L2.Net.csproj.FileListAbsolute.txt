@@ -1,6 +1,0 @@
-E:\l2\New folder\L2.Net Project\L2.Net\bin\Debug\L2.Net.XML
-E:\l2\New folder\L2.Net Project\L2.Net\bin\Debug\L2.Net.dll
-E:\l2\New folder\L2.Net Project\L2.Net\bin\Debug\L2.Net.pdb
-E:\l2\New folder\L2.Net Project\L2.Net\obj\Debug\L2.Net.dll
-E:\l2\New folder\L2.Net Project\L2.Net\obj\Debug\L2.Net.pdb
-E:\l2\New folder\L2.Net Project\L2.Net\obj\Debug\L2.Net.csprojResolveAssemblyReference.cache
